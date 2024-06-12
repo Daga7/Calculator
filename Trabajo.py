@@ -1,5 +1,6 @@
 import flet as ft
 
+
 def calcular_precio(precio_costo, porcentaje):
     return precio_costo * (1 + porcentaje / 100)
 
@@ -23,11 +24,14 @@ def main(page: ft.Page):
 
             # Agregar la tabla de precios
             text_resultados.controls.append(
+                ft.Text("Resultados", style="headlineSmall"),  # Agrega un título para la tabla de resultados
+            )
+            text_resultados.controls.append(
                 ft.DataTable(
                     columns=[
-                        ft.DataColumn(ft.Text("Lista"), numeric=False),
-                        ft.DataColumn(ft.Text("Porcentaje"), numeric=False),
-                        ft.DataColumn(ft.Text("Precio"), numeric=False),
+                        ft.DataColumn(ft.Text("Lista")),
+                        ft.DataColumn(ft.Text("Porcentaje")),
+                        ft.DataColumn(ft.Text("Precio")),
                     ],
                     rows=[
                         ft.DataRow(
@@ -51,16 +55,27 @@ def main(page: ft.Page):
             page.dialog.open = True
             page.update()
 
-    # Crear y colocar los widgets
+    def limpiar_campos(e=None):
+        # Limpiar el valor del campo de texto 
+        input_precio_costo.value = ""
+        # Limpiar tablas 
+        text_resultados.controls.clear()
+        page.update()
+
+
+
+    # Configuración de la ventana
     page.title = "Lista De Precios"
     page.window_width = 420
     page.window_height = 550
 
     input_precio_costo = ft.TextField(
         label="Ingrese el precio de costo",
-        on_submit=calcular_precios  # Llama a calcular_precios cuando se presiona "Enter"
+        on_submit=calcular_precios
     )
     btn_calcular = ft.ElevatedButton(text="Calcular Precios", on_click=calcular_precios)
+    btn_limpiar = ft.ElevatedButton(text="Limpiar", color="red", on_click=limpiar_campos)
+    on_space=limpiar_campos
     text_resultados = ft.Column()
 
     # Agregar los widgets a la página
@@ -68,18 +83,19 @@ def main(page: ft.Page):
         input_precio_costo,
         btn_calcular,
         text_resultados,
-        ft.ElevatedButton(text="Salir", color="red", on_click=lambda e: page.window_close())
+        btn_limpiar
     )
-    
+
     # Centrar ORTIMARCAS SAS al final
     page.add(
         ft.Row(
             controls=[
                 ft.Text(value="ORTIMARCAS SAS", color="blue", size=16, weight="bold")
             ],
-            alignment="center"  # Centra el texto horizontalmente
+            alignment="center"
         )
     )
+
 
 # Ejecutar la aplicación Flet
 ft.app(target=main)
