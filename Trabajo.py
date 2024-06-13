@@ -61,8 +61,17 @@ def main(page: ft.Page):
         # Limpiar tablas 
         text_resultados.controls.clear()
         page.update()
+        
+    # Metodo para limpiar campos oprimiendo tecla 
 
-
+    def on_key_down(e=ft.KeyboardEvent):
+        # Limpiar el valor del campo de texto 
+        if e.key == "r":
+            input_precio_costo.value = ""
+            # Limpiar tablas 
+            text_resultados.controls.clear()
+            page.update()
+            
 
     # Configuración de la ventana
     page.title = "Lista De Precios"
@@ -74,8 +83,7 @@ def main(page: ft.Page):
         on_submit=calcular_precios
     )
     btn_calcular = ft.ElevatedButton(text="Calcular Precios", on_click=calcular_precios)
-    btn_limpiar = ft.ElevatedButton(text="Limpiar", color="red", on_click=limpiar_campos)
-    on_space=limpiar_campos
+    btn_limpiar = ft.ElevatedButton(text="Limpiar", color="red", on_click=limpiar_campos, )
     text_resultados = ft.Column()
 
     # Agregar los widgets a la página
@@ -83,7 +91,7 @@ def main(page: ft.Page):
         input_precio_costo,
         btn_calcular,
         text_resultados,
-        btn_limpiar
+        btn_limpiar,
     )
 
     # Centrar ORTIMARCAS SAS al final
@@ -95,6 +103,10 @@ def main(page: ft.Page):
             alignment="center"
         )
     )
+    
+    # agregue acá el evento de presionar tecla "ESC"
+    
+    page.on_keyboard_event = on_key_down
 
 
 # Ejecutar la aplicación Flet
