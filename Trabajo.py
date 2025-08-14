@@ -66,7 +66,7 @@ def main(page: ft.Page):
 
     def on_key_down(e=ft.KeyboardEvent):
         # Limpiar el valor del campo de texto 
-        if e.key == "r":
+        if e.key == "Escape":
             input_precio_costo.value = ""
             # Limpiar tablas 
             text_resultados.controls.clear()
