@@ -59,16 +59,23 @@ Ingresar el precio de costo y presionar Enter o el botón Calcular Precios.
 
 📄 Estructura del código
 
-calcular_precio → Calcula el precio final aplicando un porcentaje sobre el precio de costo.
+calcular_precio → 
+Calcula el precio final aplicando un porcentaje sobre el precio de costo.
 
-main → Define la interfaz, eventos y lógica principal.
+main → 
+Define la interfaz, eventos y lógica principal.
 
-calcular_precios → Procesa el precio ingresado y genera la tabla de resultados.
+calcular_precios → 
+Procesa el precio ingresado y genera la tabla de resultados.
 
-limpiar_campos y on_key_down → Permiten limpiar la interfaz mediante botón o atajo de teclado (ESC).
+limpiar_campos y on_key_down → 
+Permiten limpiar la interfaz mediante botón o atajo de teclado (ESC).
 
 📌 Atajos de teclado
+
 ESC → Limpia el campo y la tabla de resultados.
+ENTER →  Calcular precios
 
 📜 Licencia
+
 Este proyecto es de uso libre y puede ser modificado y distribuido según tus necesidades.
