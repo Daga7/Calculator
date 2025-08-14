@@ -23,22 +23,38 @@ Aplicación de escritorio construida con [Flet](https://flet.dev/) para calcular
 - Biblioteca **Flet**
 
 Instalar dependencias con:
+
 ```bash
 pip install flet
+```
+
+🛠 Instalación de `pip` (si no está instalado)
+
+```bash
+sudo apt update
+sudo apt install python3-pip
+```
 
 🚀 Uso
+
 Clonar el repositorio:
 
-bash
+```bash
 git clone https://github.com/Daga7/Calculator.git
+```
+
 Entrar al directorio:
 
-bash
+```bash
 cd Calculator
+```
+
 Ejecutar la aplicación:
 
-bash
+```bash
 python Trabajo.py
+```
+
 Ingresar el precio de costo y presionar Enter o el botón Calcular Precios.
 
 📄 Estructura del código
