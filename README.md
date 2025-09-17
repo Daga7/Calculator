@@ -82,4 +82,4 @@ Ingresar el precio de costo y presionar Enter o el botón Calcular Precios.
 
 ## 📜 Licencia  
 
-Este proyecto es de uso libre y puede ser modificado y distribuido según tus necesidades.
+Este proyecto es de uso libre y puede ser modificado y distribuido según tus necesidades
